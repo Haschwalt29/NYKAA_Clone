@@ -1,0 +1,389 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin:0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+a{
+    color:inherit;
+    text-decoration: none;
+}
+
+/* Top black strip */
+.top-bar{
+    background:#0f1111;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:8px 28px;
+    font-size:13.5px;
+}
+.top-bar .right-links{ display:flex; gap:18px; }
+.top-bar a{ color:#fff; cursor:pointer; }
+.top-bar a:hover{ color:#ff5c8d; }
+
+header{
+    padding:0 28px;
+    border-bottom: 1px solid #e2e2e2;
+    height: 65px;
+    width: 100%;
+    background:#ffffff;
+    display:flex;
+    align-items:center;
+    position: relative;
+    z-index: 999;
+}
+.header-content{
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 0;
+}
+header .left,
+header .right{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    min-width: 0;
+}
+header .left{ gap: 64px; }
+.logo{ margin-left: 20px; }
+.nav ul{
+    padding:0;
+    list-style: none;
+    display: flex;
+    gap: 32px;
+    flex-wrap: nowrap;
+}
+.nav ul li{
+    font-size: 16px;
+    font-weight: 600;
+    color:#1a2b3b;
+    letter-spacing: 0;
+    cursor: pointer;
+    padding: 8px 0;
+}
+.nav ul li:hover{ color:#0f172a; }
+
+
+.inputSearch{
+    background:#f8f9fa;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #e1e5e9;
+    border-radius: 0px;
+    max-width: 100%;
+    height: 40px;
+}
+.inputSearch input{
+    background: transparent;
+    border:none;
+    outline: none;
+    padding: 0 8px;
+    width: 272px;
+    max-width: 272px;
+    font-size: 16px;
+    color:#6b7280;
+}
+
+/* Prevent horizontal scroll on small screens */
+html, body { overflow-x: visible; }
+
+/* Responsive tweaks to keep navbar within viewport */
+@media (max-width: 1280px){
+  header{ padding: 0 20px; }
+  .nav ul{ gap: 24px; }
+  .inputSearch input{ width: 225px; max-width: 225px; }
+  .logo img{ height: 24px; }
+}
+@media (max-width: 1024px){
+  .nav ul{ gap: 18px; }
+  .nav ul li{ font-size: 15px; padding: 4px 0; }
+  .inputSearch input{ width: 198px; max-width: 198px; }
+  header .right{ gap: 16px; }
+}
+@media (max-width: 900px){
+  .nav ul{ gap: 14px; }
+  .nav ul li{ font-size: 14px; }
+  .inputSearch input{ width: 180px; max-width: 180px; }
+}
+.inputSearch .searchIcon{ color:#9ca3af; font-size: 16px; margin-right: 8px; }
+.inputSearch .clearBtn{
+    margin-left: 6px;
+    background:#e8ecf0;
+    border:1px solid #d1d7de;
+    color:#6b7280;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    cursor: pointer;
+}
+.inputSearch .clearBtn:hover{ background:#e2e7ec; }
+.inputSearch .inputDivider{ width:1px; height:20px; background:#d1d5db; margin: 0 8px; }
+.inputSearch .cameraBtn{
+    background:#fff;
+    border:1px solid #d1d7de;
+    border-radius:6px;
+    width:20px;
+    height:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+}
+.inputSearch .cameraIcon{ color:#9ca3af; font-size: 16px; cursor: pointer; }
+.accountLink{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    color:#111827;
+}
+.accountLink:last-child{
+    margin-right: 20px;
+}
+.accountLink i{ font-size:18px; color:#0f172a; }
+.accountLink p{ font-size:16px; margin:0; }
+.accountLink:hover{ color:#0f172a; }
+
+.subNavigation{
+    font-size: 13px;
+    padding: 8px 0;
+    margin:0;
+    display: none;
+    background: #ffffff;
+    border-bottom: 1px solid #e2e2e2;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+.showSub .subNavigation{ display: flex !important; }
+.subNavigation ul{
+    display: flex;
+    padding:0;
+    align-items: center;
+    list-style: none;
+    gap: 32px;
+    margin: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.subNavigation ul::-webkit-scrollbar {
+    display: none;
+}
+
+.nav-arrow {
+    background: #f5f5f5;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 0 8px;
+    transition: background-color 0.2s;
+}
+
+.nav-arrow:hover {
+    background: #e0e0e0;
+}
+
+.nav-arrow-right {
+    background: #ff3a73;
+    color: white;
+}
+
+.nav-arrow-right:hover {
+    background: #e6346a;
+}
+
+.nav-arrow i {
+    font-size: 12px;
+}
+.subNavigation ul li i{
+    padding-left: 3px;
+}
+.subNavigation ul li{
+    cursor: pointer;
+    font-weight: 500;
+    color: #374151;
+    padding: 4px 0;
+}
+.sub-navigatin-nav ul li{
+    position: relative;
+}
+
+
+.sub-navigatin-nav{
+    position: absolute;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border: 1px solid #e2e2e2;
+    display: none;
+    gap: 30px;
+    width: 800px;
+    top: 100%;
+    left: 0;
+    z-index: 1001;
+    flex-wrap: wrap;
+}
+.sub-navigatin-nav-Image{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.sub-navigatin-nav p{
+    font-weight: 500;
+}
+.sub-navigatin-nav-Image img{
+    max-width: 150px;
+    height: auto;
+    border-radius: 4px;
+}
+.sub-navigatin-nav .imageWrap{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.subNavigation li:hover .sub-navigatin-nav{
+    display: flex;
+}
+.sub-navigatin-nav .col{
+    display: flex;
+    flex-direction: column;
+}
+.sub-navigatin-nav .col a{
+    padding: 7px;
+}
+.sub-navigatin-nav .col a:first-child{
+    color:#ee356c;
+}
+.categorySection{
+    width: fit-content;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.imageFull img{
+    width: 100%;
+}
+.slideCategory{
+    padding: 20px;
+    position: relative;
+    /* overflow: hidden; */
+}
+.bgpink{
+    background-color: #fdd5b7;
+}
+.btn_container{
+    position: absolute;
+    width: 95%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.btn_container button{
+    border:none;
+    outline: none;
+    background: white;
+    font-size: 20px;
+    border-radius: 100px;
+    padding:10px;
+    width: 60px;
+    height: 60px;
+
+}
+.slideCategory-Image img{
+    min-width: 100px;
+}
+.slideCategory-Image{
+    display: flex;
+    width: 100%;
+    overflow:hidden
+}
+.listofProduct,
+.brandTopproduct,
+.hardToResistDeals_image{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: auto;
+    width: 1250px;
+    justify-content: center;
+    align-items: center;
+}
+.listofProduct_contaienr,
+.brandTop_container,
+.hardtoresistDeals_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.listofProduct p{
+    text-align: center;
+}
+.autoCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:30px auto;
+}
+.hardtoresistDeals{
+    background : #ffca8a;
+}
+
+/* --- Overrides to normalize navbar proportions --- */
+.top-bar { padding: 6px 24px; font-size: 13px; }
+
+header { padding: 14px 24px; }
+header .right { gap: 20px; }
+header .right { gap: 24px; }
+
+.nav ul { gap: 32px; }
+.nav ul li {
+  font-weight: 500;
+  letter-spacing: 0;
+  padding: 4px 0;
+}
+.nav ul li::after { bottom: -6px; height: 2px; }
+
+.inputSearch { padding: 4px 8px; border-radius: 6px; }
+.inputSearch input { min-width: 0; width: 272px; max-width: 272px; font-size: 16px; }
+
+.logo { font-size: 22px; letter-spacing: .2px; }
+
+/* Reduce main navbar height */
+header { padding: 10px 24px; min-height: 56px; }
+.logo img{ height: 26px; display: block; }
+.nav ul{ gap: 32px; }
+.nav ul li{ font-size: 16px; padding: 6px 0; font-weight: 600; }
+.inputSearch { padding: 4px 8px; }
+.inputSearch input{ width: 272px; max-width: 272px; font-size: 16px; }
+
+/* remove underline hover from earlier block for clean look */
+.nav ul li::after{ display: none; }
